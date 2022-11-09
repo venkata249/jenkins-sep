@@ -1,0 +1,24 @@
+node {
+    
+    stage('git clone') {
+        git credentialsId: 'git', url: 'https://github.com/venkata249/Simple-DevOps-Project.git'   
+    }
+    stage('maven version') {
+       sh 'mvn --version' 
+    }
+	stage('java version') {
+        sh 'java --version'
+    }
+	stage('maven validate') {
+       sh 'mvn validate' 
+    }
+	stage('maven compile') {
+        sh 'mvn compile'
+    }
+	stage('maven test') {
+       sh 'mvn test' 
+    }
+	stage('maven package') {
+        sh 'mvn package'
+    }
+}
