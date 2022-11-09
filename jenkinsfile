@@ -5,7 +5,6 @@ node {
     }
     stage('maven version') {
        sh 'mvn --version'
-       def pom = readMavenPom file:'pom.xml'
     }
 	stage('java version') {
         sh 'java --version'
